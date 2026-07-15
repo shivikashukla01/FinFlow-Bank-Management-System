@@ -1,0 +1,2 @@
+CREATE DATABASE FinFlow;
+USE FinFlow;
