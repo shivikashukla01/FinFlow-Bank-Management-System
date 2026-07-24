@@ -1,0 +1,16 @@
+-- Drop Admin table if it already exists
+DROP TABLE IF EXISTS Admin;
+
+-- Create Admin table
+CREATE TABLE Admin (
+    admin_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT UNIQUE NOT NULL,
+    admin_level ENUM('BRANCH_ADMIN','SYSTEM_ADMIN','SUPER_ADMIN') NOT NULL,
+    access_scope ENUM('BRANCH','REGIONAL','GLOBAL') DEFAULT 'BRANCH',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_active BOOLEAN DEFAULT TRUE,
+    granted_by INT NULL,
+
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id) ON DELETE CASCADE,
+    FOREIGN KEY (granted_by) REFERENCES Admin(admin_id) ON DELETE SET NULL
+);
