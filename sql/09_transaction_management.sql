@@ -1,4 +1,3 @@
-
 CREATE TABLE Transaction (
     txn_id INT PRIMARY KEY AUTO_INCREMENT,
     txn_type ENUM('DEPOSIT', 'WITHDRAW', 'TRANSFER') NOT NULL,

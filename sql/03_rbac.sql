@@ -1,4 +1,3 @@
-
 CREATE TABLE Permission(
     permission_id INT PRIMARY KEY AUTO_INCREMENT,
     permission_name VARCHAR(100) NOT NULL UNIQUE,

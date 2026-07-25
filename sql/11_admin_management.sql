@@ -1,4 +1,3 @@
-
 CREATE TABLE Admin(
     admin_id INT PRIMARY KEY AUTO_INCREMENT,
     employee_id INT UNIQUE NOT NULL,

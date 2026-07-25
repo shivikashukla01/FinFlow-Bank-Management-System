@@ -1,4 +1,3 @@
-
 CREATE TABLE AuditLog(
     audit_id INT PRIMARY KEY AUTO_INCREMENT,
     actor_type ENUM('ADMIN','EMPLOYEE','CUSTOMER') NOT NULL,

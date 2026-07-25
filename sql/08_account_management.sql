@@ -1,4 +1,3 @@
-
 CREATE TABLE Account(
     account_id INT PRIMARY KEY AUTO_INCREMENT,
     account_no VARCHAR(20) UNIQUE NOT NULL,

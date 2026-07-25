@@ -1,4 +1,3 @@
-
 CREATE TABLE Notification(
     notification_id BIGINT PRIMARY KEY AUTO_INCREMENT,
     user_type ENUM('CUSTOMER','EMPLOYEE','ADMIN') NOT NULL,

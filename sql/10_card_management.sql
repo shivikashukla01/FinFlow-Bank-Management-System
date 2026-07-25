@@ -1,4 +1,3 @@
-
 CREATE TABLE Card(
     card_id INT PRIMARY KEY AUTO_INCREMENT,
     card_number VARCHAR(16) UNIQUE NOT NULL,

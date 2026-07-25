@@ -1,5 +1,11 @@
 USE FinFlow;
 
+
+DROP VIEW IF EXISTS CustomerProfileView;
+DROP VIEW IF EXISTS LoanDashboardView;
+DROP VIEW IF EXISTS LoanRepaymentDashboardView;
+DROP VIEW IF EXISTS CustomerAccountView;
+DROP VIEW IF EXISTS CustomerTransactionView;
 -- ===========================================
 -- 1. Customer Profile Summary
 -- ===========================================
@@ -155,13 +161,3 @@ LEFT JOIN AccountHolder rah
 LEFT JOIN Customer rc
     ON rah.customer_id = rc.customer_id;
 
-
-
-
-
-
--- DROP VIEW CustomerProfileView;
--- DROP VIEW LoanDashboardView;
--- DROP VIEW LoanRepaymentDashboardView;
--- DROP VIEW CustomerAccountView;
--- DROP VIEW CustomerTransactionView;
