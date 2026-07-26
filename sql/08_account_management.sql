@@ -15,6 +15,16 @@ CREATE TABLE Account(
     INDEX(current_status)
 );
 
+ALTER TABLE Account
+DROP CHECK account_chk_1;
+
+ALTER TABLE Account
+ADD CONSTRAINT overdraft_limit
+CHECK(
+    (account_type = 'CURRENT' AND balance >= -50000.00) OR
+    (account_type != 'CURRENT' AND balance >= 0.00)
+);
+
 CREATE TABLE AccountHolder(
     account_id INT NOT NULL,
     customer_id INT NOT NULL,

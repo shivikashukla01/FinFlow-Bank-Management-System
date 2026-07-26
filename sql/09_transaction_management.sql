@@ -15,10 +15,13 @@ CREATE TABLE Transaction (
         ON DELETE SET NULL,
     INDEX (sender_account_id),
     INDEX (receiver_account_id)
-    -- CHECK ((txn_type = 'DEPOSIT' AND receiver_account_id IS NOT NULL AND sender_account_id IS NULL)
---         OR (txn_type = 'WITHDRAW' AND sender_account_id IS NOT NULL AND receiver_account_id IS NULL)
---         OR (txn_type = 'TRANSFER' AND sender_account_id IS NOT NULL AND receiver_account_id IS NOT NULL))
+    CHECK ((txn_type = 'DEPOSIT' AND receiver_account_id IS NOT NULL AND sender_account_id IS NULL)
+        OR (txn_type = 'WITHDRAW' AND sender_account_id IS NOT NULL AND receiver_account_id IS NULL)
+        OR (txn_type = 'TRANSFER' AND sender_account_id IS NOT NULL AND receiver_account_id IS NOT NULL))
 );
+
+ALTER TABLE Transaction
+ADD COLUMN failure_reason VARCHAR(255) NULL AFTER status;
 
 CREATE TABLE Ledger(
     ledger_id INT PRIMARY KEY AUTO_INCREMENT,

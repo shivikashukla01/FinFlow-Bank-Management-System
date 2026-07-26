@@ -1,6 +1,5 @@
 USE FinFlow;
 
-
 DROP VIEW IF EXISTS CustomerProfileView;
 DROP VIEW IF EXISTS LoanDashboardView;
 DROP VIEW IF EXISTS LoanRepaymentDashboardView;
